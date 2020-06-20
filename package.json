@@ -10,7 +10,7 @@
     "dev-docker": "../node_modules/nodemon/bin/nodemon.js --debug=5858",
     "dev-host": "nodemon --debug=5858",
     "start-watch": "nodemon ./server/index.js --inspect=0.0.0.0:9229",
-    "start-wait-debuger": "nodemon ./server/index.js --inspect-brk=0.0.0.0:9229",
+    "start-wait-debuger": "nodemon ./server/index.js --inspect-brk=0.0.0.0:9229"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
