@@ -16,9 +16,15 @@
     "test-wait-debuger": "cross-env NODE_ENV=test PORT=8081 mocha --no-timeouts --exit --inspect-brk=0.0.0.0:9230"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "^1.4.4",
+    "cors": "^2.8.5",
     "express": "^4.16.3",
     "mongodb": "^3.1.13",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "sp108e_raw": "0.0.5",
+    "winston": "^3.0.0",
+    "winston-daily-rotate-file": "^3.9.0"
   },
   "devDependencies": {
     "chai": "^4.1.2",

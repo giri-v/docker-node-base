@@ -7,13 +7,9 @@ const cors = require("cors");
 
 //////////////////////////////////////////////////////
 //
-//  ALL USER requireS HERE
+//  ALL USER requires HERE
 //
-
-
-
-
-////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////
 
 const MongoClient = require('mongodb').MongoClient;
 // this example includes a connection to MongoDB
@@ -84,46 +80,19 @@ app.use(cookieParser());
 //
 //  ALL USER CODE HERE
 //
-////////////////////////////////////////////////////////
-
-
-const serveApp = (req, res, next) => {
-  if (req.originalUrl === "/") {
-    req.originalUrl += "index.html";
-    res.sendFile(
-      __dirname.replace("server", "client") + "/app" + req.originalUrl
-    );
-  } else {
-    logger.debug(" Trying to send file: " + req.originalUrl);
-    res.sendFile(
-      __dirname.replace("server", "client") + "/app" + req.originalUrl
-    );
-  }
-};
-
-const serveFiles = (req, res, next) => {
-  var tag1 = req.originalUrl;
-  logger.debug("Checking for app file serving...");
-  logger.debug("    " + tag1);
-  if (tag1.indexOf(".") > 0 && tag1.indexOf("/") == tag1.lastIndexOf("/")) {
-    logger.debug("    Sending app resource file.");
-    res.sendFile(
-      __dirname.replace("server", "client") + "/app" + req.originalUrl
-    );
-  } else {
-    logger.debug("    Not a file request. Moving on.");
-    next();
-  }
-};
-
-app.route("/")
-  .get(express.static(angularDir));
-
-
+//////////////////////////////////////////////////////
 
 // Setup router and routes
+app.route("/")
+  .get(express.static(angularDir));
 app.use("/", express.static(angularDir), api);
 app.use("/api/v1", api); // To allow API version support
+
+
+
+
+
+
 
 
 /////////////////////////////////////
